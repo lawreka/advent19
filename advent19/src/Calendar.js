@@ -40,8 +40,9 @@ class Calendar extends Component {
     render() {
         let numbers = list25();
         const isCompleted = [
-            {day: 1, stars: 1}, 
-            {day: 2, stars: 2}
+            {day: 1, stars: "*"}, 
+            {day: 2, stars: "**"},
+            {day: 3, stars: "**"}
         ]
         const { overlayActive, displayDay } = this.state;
         console.log(isCompleted[0].day)
@@ -63,10 +64,10 @@ class Calendar extends Component {
                             onClick={() => this.onClick(number)}
                         >
                             {number}
-                            {isCompleted[index].day === number &&
-                                <span className="star">
-                                    *
-                                </span> 
+                            {(isCompleted[index] && isCompleted[index].day) === number &&
+                                    <span className="star">
+                                        {isCompleted[index].stars}
+                                    </span> 
                             }
                         </button>
                     ))}
