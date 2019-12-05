@@ -50,9 +50,11 @@ class Calendar extends Component {
             <div className="calendar-wrapper">
             {overlayActive ? 
                     <div className="calendar-overlay">
+                        {/* eslint-disable-next-line */}
                         <a onClick={this.close} className="close-overlay">
                             x
                         </a>
+                        {/* eslint-disable-next-line */}
                         <iframe src={displayDay}/>
                     </div>
             : null }
