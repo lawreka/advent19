@@ -20,7 +20,7 @@ class Calendar extends Component {
     list25 = () => {
         let list = [];
         for (var i = 1; i <= 25; i++) {
-            list.push({ key: i, number: i, star: false });
+            list.push({ key: i, number: i });
         }
         return list;
     }
@@ -39,8 +39,12 @@ class Calendar extends Component {
     }
     render() {
         let numbers = list25();
-        let isCompleted = [1, 2]
+        const isCompleted = [
+            {day: 1, stars: 1}, 
+            {day: 2, stars: 2}
+        ]
         const { overlayActive, displayDay } = this.state;
+        console.log(isCompleted[0].day)
         return (
             <div className="calendar-wrapper">
             {overlayActive ? 
@@ -59,7 +63,7 @@ class Calendar extends Component {
                             onClick={() => this.onClick(number)}
                         >
                             {number}
-                            {isCompleted.indexOf(index+1) !== -1 &&
+                            {isCompleted[index].day === number &&
                                 <span className="star">
                                     *
                                 </span> 
