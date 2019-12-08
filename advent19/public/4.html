@@ -8,25 +8,33 @@
     <div class="codfile" id="cod">
         <pre class="prettyprint">
             function checkSquence (arr) {
-                if (arr[0] === arr[1]){
-                        return true;
-                
-                }
-                if (arr[1] === arr[2]){
-                        return true;
-                
-                }
-                if (arr[2] === arr[3]){
-                        return true;
-                
-                }
-                if (arr[3] === arr[4]){
-                        return true;
-                
-                }
-                if (arr[4] === arr[5]){
+                if (arr[0] == arr[1] && 
+                    parseInt(arr[1]) < parseInt(arr [2]) 
+                    ) {
                     return true;
                 }
+                if (arr[1] == arr[2] && 
+                    arr[0] != arr[1] &&
+                    parseInt(arr[2]) < parseInt(arr[3])
+                    ) {
+                    return true;
+                }
+                if (arr[2] == arr[3] &&
+                    arr[1] != arr[2] &&
+                    parseInt(arr[3]) < parseInt(arr[4])
+                    ) {
+                        return true;
+                }
+                if (arr[3] == arr[4] &&
+                    arr[2] != arr[3] &&
+                    parseInt(arr[4]) < parseInt(arr[5])
+                    ) {
+                        return true;
+                }
+                if (arr[4] == arr[5] &&
+                    arr[3] != arr[4]) {
+                        return true;
+                    }
                 return false;
             }
             
@@ -52,7 +60,7 @@
                     let validseq = checkSquence(digits);
                     let validinc = checkIncrease(digits);
                     if (validseq && validinc){
-                        valids.push(current);
+                        valids.push({ digits: current, seq: validseq, inc: validinc});
                         validpw = validpw + 1;
                     }
                 }
@@ -69,25 +77,33 @@
 <script>
 
 function checkSquence (arr) {
-    if (arr[0] === arr[1]){
-            return true;
-    
-    }
-    if (arr[1] === arr[2]){
-            return true;
-    
-    }
-    if (arr[2] === arr[3]){
-            return true;
-    
-    }
-    if (arr[3] === arr[4]){
-            return true;
-    
-    }
-    if (arr[4] === arr[5]){
+    if (arr[0] == arr[1] && 
+        parseInt(arr[1]) < parseInt(arr [2]) 
+        ) {
         return true;
     }
+    if (arr[1] == arr[2] && 
+        arr[0] != arr[1] &&
+        parseInt(arr[2]) < parseInt(arr[3])
+        ) {
+        return true;
+    }
+    if (arr[2] == arr[3] &&
+        arr[1] != arr[2] &&
+        parseInt(arr[3]) < parseInt(arr[4])
+        ) {
+            return true;
+    }
+    if (arr[3] == arr[4] &&
+        arr[2] != arr[3] &&
+        parseInt(arr[4]) < parseInt(arr[5])
+        ) {
+            return true;
+    }
+    if (arr[4] == arr[5] &&
+        arr[3] != arr[4]) {
+            return true;
+        }
     return false;
 }
 
@@ -113,7 +129,7 @@ function password (min, max) {
         let validseq = checkSquence(digits);
         let validinc = checkIncrease(digits);
         if (validseq && validinc){
-            valids.push(current);
+            valids.push({ digits: current, seq: validseq, inc: validinc});
             validpw = validpw + 1;
         }
     }
