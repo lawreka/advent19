@@ -43,7 +43,8 @@ class Calendar extends Component {
             {day: 1, stars: "*"}, 
             {day: 2, stars: "**"},
             {day: 3, stars: "**"},
-            {day: 4, stars: "**"}
+            {day: 4, stars: "**"},
+            {day: 5, stars: "*"}
         ]
         const { overlayActive, displayDay } = this.state;
         console.log(isCompleted[0].day)
