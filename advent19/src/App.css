@@ -1,5 +1,5 @@
 body {
-  background-color: #282c34;
+  background-color: #02250b;
   color: #fff;
 }
 .App {
@@ -7,18 +7,17 @@ body {
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .App-link {
-  color: #00c01a;
+  color: #05c01a;
   grid-column-start: auto;
   grid-column-end: auto;
   grid-row-start: auto;
@@ -26,7 +25,8 @@ body {
   background-color: transparent;
   border: none;
   font-size: 20px;
-  padding: 10px;
+  padding: calc(2vw);
+  border: 2px solid #024413
 }
 .App-link:focus {
   outline: none;
@@ -49,6 +49,7 @@ body {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 5%;
 }
 
 .calendar-overlay {
@@ -64,11 +65,10 @@ body {
 .close-overlay{
   position: absolute;
   top: 5px;
-  right: 10px;
-  padding: 0px 10px;
-  font-size: 20px;
+  right: 15px;
+  font-size: 18px;
   font-family: sans-serif;
-  border: 1px solid;
+  color: #05c01a;
 }
 
 iframe{
@@ -76,27 +76,21 @@ iframe{
   width: 100%;
   height: 100%;
 }
-#name{
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 5px 10px;
-}
-#name a{
-  color: #fff;
-  text-decoration: none;
-}
-#link{
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding: 5px 10px;
-}
-#link a{
-  color: #fff;
-  text-decoration: none;
-}
 
 .star {
   color: yellow;
+}
+
+.headerlinks-wrap{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 1%;
+}
+
+.headerlinks{
+  margin: 10px;
+  color:#05c01a;
+  text-decoration: none;
+  line-height: 120%;
 }
